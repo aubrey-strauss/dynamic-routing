@@ -20,8 +20,13 @@ const posts = [
   },
 ];
 
-export default posts;
+// slug is the URL-friendly version of the title: lowercase, with dashes instead of spaces.
+// The name comes from old newspaper jargon, where a "slug" was the short nickname for a story.
+// It's what goes in the address bar: /blog/my-first-post.
 
-//slug is the URL-friendly version of the title: lowercase, with dashes instead of spaces.
-// The name comes from old newspaper jargon, where a “slug” was the short nickname for a story.
-// It’s what goes in the address bar: /blog/my-first-post.
+// Finds one post by its slug. Returns undefined if no post matches.
+export function getPostBySlug(slug) {
+  return posts.find((post) => post.slug === slug);
+}
+
+export default posts;
